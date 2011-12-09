@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:com="com.*" xmlns:model="com.model.*"
+		 creationComplete="group1_creationCompleteHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import com.controller.NationalForestEvent;
+			import com.services.NationalForestProxy;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			[Bindable]
+			public var forestService:NationalForestProxy = new NationalForestProxy();
+			private var _forest:NationalForest;
+			
+			protected function group1_creationCompleteHandler(event:FlexEvent):void
+			{
+				// TODO Auto-generated method stub
+				forestService.addEventListener(NationalForestEvent.LOADED, onForestsLoaded);
+				forestService.getForest();
+			}
+			
+			private function onForestsLoaded(event:NationalForestEvent):void
+			{
+				forestGrid.dataProvider = new ArrayCollection(event.nationalForest);
+			}
+			
+			protected function deleteButton_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				forestService.addEventListener(NationalForestEvent.DELETED, onForestsDeleted);
+				forestService.deleteForest(forestVO.id);
+			}
+			
+			private function onForestsDeleted(event:NationalForestEvent):void
+			{
+				
+			}
+			
+			protected function addButton_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				_forest = new NationalForest();
+				_forest.name = forestName.text;
+				_forest.state = state.text;
+				_forest.area = Number(area.text);
+				_forest.established = established.selectedDate;
+				
+				_forest.closest_city = closestCity.text;
+				_forest.id = int(forestID.text);
+				forestService.addEventListener(NationalForestEvent.ADDED, onForestsAdded);
+				forestService.addForest(_forest);
+				Alert.show("Forest Added");
+			}
+			
+			private function onForestsAdded(event:NationalForestEvent):void{
+				forestService.addEventListener(NationalForestEvent.ADDED, onForestsAdded);
+				forestService.addForest(_forest);
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<model:NationalForest id="forestVO"/>
+	</fx:Declarations>
+	<s:Panel title="National Forest" backgroundColor="#FFE9C4" chromeColor="#F5B776" accentColor="#000000" contentBackgroundColor="#FFFFFF" color="#8A9126">
+		<s:layout>
+			<s:VerticalLayout paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10"/>
+		</s:layout>
+		<s:HGroup>
+			<s:VGroup>
+				<mx:Form>
+					<mx:FormItem label="Forest Name:">
+						<s:TextInput id="forestName"/>
+					</mx:FormItem>
+					<mx:FormItem label="State:">
+						<s:TextInput id="state"/>
+					</mx:FormItem>
+					<mx:FormItem label="Area:">
+						<s:TextInput id="area"/>
+					</mx:FormItem>
+				</mx:Form>
+			</s:VGroup>
+			<s:VGroup>
+				<mx:Form>
+					<mx:FormItem label="Established:">
+						<mx:DateField id="established" />
+					</mx:FormItem>
+					<mx:FormItem label="Closest City">
+						<s:TextInput id="closestCity"/>
+					</mx:FormItem>
+					<mx:FormItem label="ID">
+						<s:TextInput id="forestID"/>
+					</mx:FormItem>
+					<mx:FormItem>
+						<s:Button id="addButton" label="Add Forest" click="addButton_clickHandler(event)"/>
+					</mx:FormItem>
+				</mx:Form>
+			</s:VGroup>
+		</s:HGroup>
+		
+			<mx:DataGrid id="forestGrid" width="600" change="forestVO = forestGrid.selectedItem as NationalForest"/>
+			<s:Button id="deleteButton" label="Delete Forest" click="deleteButton_clickHandler(event)"/>
+		
+	</s:Panel>
+	
+	
+	
+	
+</s:Group>
