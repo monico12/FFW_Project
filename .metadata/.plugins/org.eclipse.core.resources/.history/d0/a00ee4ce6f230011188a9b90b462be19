@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Form>
+		<s:FormItem label="First Name">
+			<s:textInput id="firstName"/> 
+		</s:FormItem>
+		<s:FormItem label="Last Name">
+			<s:TextInput id="lastName"/>
+		</s:FormItem>
+		<s:FormItem label="Address">
+			<s:TextInput id="addressInput"/>
+		</s:FormItem>
+		<s:FormItem label="City">
+			<s:TextInput id="cityInput"/>
+		</s:FormItem>
+		<s:FormItem label="Zip">
+			<s:TextInput id="zipInput"/>
+		</s:FormItem>
+			
+		
+	</s:Form>
+	
+</s:BorderContainer>

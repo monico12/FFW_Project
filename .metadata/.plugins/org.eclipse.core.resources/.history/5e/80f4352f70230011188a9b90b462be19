@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:view="com.view.*"
+		 creationComplete="group1_creationCompleteHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import com.controller.OrderEvent;
+			import com.service.Service;
+			
+			import mx.collections.ArrayCollection;
+			import mx.events.FlexEvent;
+			[Bindable]
+			public var _cupcakeService:Service = new Service();
+			protected function group1_creationCompleteHandler(event:FlexEvent):void
+			{
+				// TODO Auto-generated method stub
+				_cupcakeService.addEventListener(OrderEvent.LOADED, onCupcakesLoaded);
+				_cupcakeService.readCupcakes();
+			}
+			
+			private function onCupcakesLoaded(event:OrderEvent):void
+			{
+				list.dataProvider = new ArrayCollection(event.cupcakeArray);
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	<view:CupcakeList id="list" itemRenderer="com.model.CupcakeRenderer"/>
+</s:Group>

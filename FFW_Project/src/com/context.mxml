@@ -2,12 +2,13 @@
 <s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
 		 xmlns:s="library://ns.adobe.com/flex/spark" 
 		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:view="com.view.*"
-		 creationComplete="group1_creationCompleteHandler(event)">
+		 creationComplete="group1_creationCompleteHandler(event)" xmlns:model="com.model.*">
 	<fx:Script>
 		<![CDATA[
 			import com.controller.OrderEvent;
 			import com.service.Service;
 			
+			import mx.collections.ArrayCollection;
 			import mx.events.FlexEvent;
 			[Bindable]
 			public var _cupcakeService:Service = new Service();
@@ -15,18 +16,25 @@
 			{
 				// TODO Auto-generated method stub
 				_cupcakeService.addEventListener(OrderEvent.LOADED, onCupcakesLoaded);
+				_cupcakeService.readCupcakes();
 			}
 			
 			private function onCupcakesLoaded(event:OrderEvent):void
 			{
-				
+				list.dataProvider = new ArrayCollection(event.cupcakeArray);
+			}
+			
+			protected function list_clickHandler(event:MouseEvent):void
+			{
+					
 			}
 			
 		]]>
 	</fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
-		
+		<model:CupcakeVO id="cupCake"/>
 	</fx:Declarations>
-	
+	<view:CupcakeList id="list" itemRenderer="com.model.CupcakeRenderer" click="list_clickHandler(event)"/>
+	<!--<view:LoginForm id="loginForm"/>-->
 </s:Group>

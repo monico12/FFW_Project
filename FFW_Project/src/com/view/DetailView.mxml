@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Script>
+		<![CDATA[
+			import com.model.CupcakeVO;
+			[Bindable]
+			public var _cupcakeVO:CupcakeVO;
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:layout>
+		<s:VerticalLayout/>
+	</s:layout>
+	
+	<s:HGroup>
+		<mx:Image source="com/model/cupcakeLarge.jpg"/>
+		<s:VGroup>
+			<s:Label text="{_cupcakeVO.cupCake}"/>
+			<s:Label text="{_cupcakeVO.type}"/>
+			<s:Label text="{_cupcakeVO.description}"/>
+		</s:VGroup>
+	</s:HGroup>
+</s:BorderContainer>

@@ -8,6 +8,7 @@ package com.controller
 	{
 		public static const ORDERED:String = "ordered";
 		public static const LOADED:String = "loaded";
+		
 		public var cupcakeArray:Array;
 		public var cupcakeOrderVO:CupcakeVO;
 		public function OrderEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false)

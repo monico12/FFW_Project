@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx"
+				   width="650" height="410">
+	
+	<fx:Metadata>
+		[Event(name="addedtocart", type="com.controller.OrderEvent")]
+	</fx:Metadata>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.controller.OrderEvent;
+			import com.model.CupcakeVO;
+			
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			
+			[Bindable]
+			public var _cupcakeVO:CupcakeVO;
+			[Bindable]
+			public var _image:String;
+			
+			protected function BTN_addToCart(event:MouseEvent):void
+			{
+				_cupcakeVO.quantity = quantity.value;
+				var newOrderEvent:OrderEvent = new OrderEvent("addedtocart");
+				newOrderEvent.cupcakeOrderVO = _cupcakeVO;
+				dispatchEvent(newOrderEvent);
+			}
+			
+			protected function BTN_checkoutItem(event:MouseEvent):void
+			{
+				_cupcakeVO.quantity = quantity.value;
+				var newOrderEvent:OrderEvent = new OrderEvent("ordered");
+				newOrderEvent.cupcakeOrderVO = _cupcakeVO;
+				dispatchEvent(newOrderEvent);
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:layout>
+		<s:HorizontalLayout/>
+	</s:layout>
+	
+	<mx:Image source="{_image}" width="450"/>
+	<s:VGroup>
+		<s:Label text="{_cupcakeVO.cupCake}"/>
+		<s:Label text="{_cupcakeVO.type}"/>
+		<s:Label text="{_cupcakeVO.description}" width="200"/>
+		<s:Label text="{_cupcakeVO.price}" id="price"/>
+		<s:HGroup>
+			<s:Label text="Quantity" paddingRight="10" paddingTop="4"/>
+			<s:NumericStepper id="quantity" value="1" stepSize="1"
+							  maximum="1000"/>
+		</s:HGroup>
+		<s:Button label="Add to Cart" click="BTN_addToCart(event)"/>
+		<s:Button label="Checkout Item" click="BTN_checkoutItem(event)"/>
+	</s:VGroup>
+</s:BorderContainer>

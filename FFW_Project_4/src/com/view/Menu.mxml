@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:view="com.view.*"
+				   creationComplete="bordercontainer1_creationCompleteHandler(event)" xmlns:model="com.model.*">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.controller.OrderEvent;
+			import com.model.CupcakeVO;
+			import com.service.Service;
+			import mx.collections.ArrayCollection;
+			import mx.events.FlexEvent;
+			
+			[Bindable]
+			private var _cupcakeService:Service = new Service();
+			
+			private var _priceCount:Number = 0;
+			private var _itemCount:Number = 0;
+			
+			protected function bordercontainer1_creationCompleteHandler(event:FlexEvent):void
+			{
+				_cupcakeService.addEventListener(OrderEvent.LOADED, onLoadedCupcakes);
+				_cupcakeService.readCupcakes();
+			}
+			protected function onLoadedCupcakes(event:OrderEvent):void
+			{
+				cupcakeList.dataProvider = new ArrayCollection(event.cupcakeArray);
+			}			
+			protected function cupcakeList_clickHandler(event:MouseEvent):void
+			{
+				detailView._cupcakeVO = cupcakeList.selectedItem as CupcakeVO;
+				detailView._image = "com/model/cupcakeLarge.jpg";
+			}
+			protected function addedToCart(event:OrderEvent):void
+			{
+				cVO = event.cupcakeOrderVO;
+				_priceCount += (cVO.price*cVO.quantity);
+				_itemCount += cVO.quantity;
+				totalPrice.text = "Total Price: " + currency.format(_priceCount);
+				totalItems.text = "Total Items: " + _itemCount;
+				shoppingCart.shoppingCartData.addItem(cVO);
+			}
+			protected function BTN_deleteItem(event:MouseEvent):void
+			{
+				_priceCount -= shoppingCart.selectedItem.price*shoppingCart.selectedItem.quantity;
+				_itemCount -= shoppingCart.selectedItem.quantity;
+				totalPrice.text = "Total Price: " + currency.format(_priceCount);
+				totalItems.text = "Total Items: " + _itemCount;
+				shoppingCart.shoppingCartData.removeItemAt(shoppingCart.selectedIndex);
+			}
+			protected function BTN_checkoutCart(event:MouseEvent):void
+			{
+				
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<model:CupcakeVO id="cVO" />
+		<s:CurrencyFormatter id="currency" useCurrencySymbol="true"/>
+	</fx:Declarations>
+	
+	<s:layout>
+		<s:HorizontalLayout paddingRight="10"/>
+	</s:layout>
+	
+	<view:CupcakeList id="cupcakeList" itemRenderer="com.model.CupcakeRenderer"
+					  click="cupcakeList_clickHandler(event)"/>
+	<view:DetailView id="detailView" addedtocart="addedToCart(event)"/>
+	
+	<s:VGroup>
+		<view:ShoppingCart id="shoppingCart"/>
+		<s:Label id="totalItems" text="Total Items: 0"/>
+		<s:Label id="totalPrice" text="Total Price: $0.00"/>
+		<s:Button id="deleteItem" label="Remove Item" click="BTN_deleteItem(event)"/>
+		<s:Button id="CheckoutCart" label="Checkout Cart" click="BTN_checkoutCart(event)"/>
+	</s:VGroup>
+
+</s:BorderContainer>
