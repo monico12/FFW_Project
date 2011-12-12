@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="FFW_Project" key="fxpExportProjectName"/>
-	<item value="525" key="exportDialogWidth"/>
 	<item value="551" key="importDialogHeight"/>
-	<item value="778" key="importDialogWidth"/>
+	<item value="525" key="exportDialogWidth"/>
+	<item value="632" key="importDialogWidth"/>
 	<item value="/Users/versiontenpointo/Desktop" key="fxpExportLocation"/>
 	<item value="150" key="exportDialogY"/>
 	<item value="460" key="exportDialogX"/>
-	<item value="550" key="exportDialogHeight"/>
 	<item value="150" key="importDialogY"/>
+	<item value="550" key="exportDialogHeight"/>
 	<item value="true" key="fxpExportValidate"/>
 	<item value="460" key="importDialogX"/>
 </section>

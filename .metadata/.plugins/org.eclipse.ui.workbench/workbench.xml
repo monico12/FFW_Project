@@ -81,11 +81,6 @@
 <views>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (1 item)"/>
-<category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="84" org.eclipse.ui.ide.markerType="114" org.eclipse.ui.ide.pathField="144" org.eclipse.ui.ide.resourceField="114" org.eclipse.ui.ide.severityAndDescriptionField="602"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -96,19 +91,6 @@
 </view>
 <view id="com.adobe.flexbuilder.packageexplorer" partName="Package Explorer">
 <viewState LINK_NAVIGATOR_TO_EDITOR="0" fpeIsFlat="0" fpeSortBy="1" sorter="1">
-<fpeExpanded>
-<fpeElement fpePath="/FFW_Project"/>
-<fpeElement fpePath="/FFW_Project/src"/>
-<fpeElement fpePath="/FFW_Project/src/%typeDefaultPackage"/>
-<fpeElement fpePath="/FFW_Project/src/com"/>
-<fpeElement fpePath="/FFW_Project/src/com/controller"/>
-<fpeElement fpePath="/FFW_Project/src/com/model"/>
-<fpeElement fpePath="/FFW_Project/src/com/service"/>
-<fpeElement fpePath="/FFW_Project/src/com/view"/>
-</fpeExpanded>
-<fpeSelection>
-<fpeElement fpePath="/FFW_Project/src/com/view/DetailView.mxml"/>
-</fpeSelection>
 <filters>
 <filter element="*.class" isEnabled="false"/>
 <filter element=".*" isEnabled="false"/>
@@ -129,12 +111,6 @@
 <filter element=".DS_Store" isEnabled="true"/>
 <filter element=".model" isEnabled="true"/>
 </filters>
-<expanded>
-<element path="/FFW_Project"/>
-</expanded>
-<selection>
-<element path="/FFW_Project/src/com/view/DetailView.mxml"/>
-</selection>
 </viewState>
 </view>
 <view id="com.adobe.flexbuilder.monitors.network.view.NetworkMonitorView" partName="Network Monitor"/>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:view="com.view.*"
+				   creationComplete="bordercontainer1_creationCompleteHandler(event)"
+				   borderColor="#4d2f15" backgroundColor="#dce4ef"
+				   borderWeight="5" cornerRadius="8" xmlns:model="com.model.*">
+	
+	<fx:Metadata>
+		[Event(name="ordered", type="com.controller.OrderEvent")]
+	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			import com.controller.OrderEvent;
+			import com.model.CupcakeVO;
+			import com.service.Service;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			
+			import spark.events.IndexChangeEvent;
+			
+			[Bindable]
+			private var _cupcakeService:Service = new Service();
+			[Bindable]
+			private var _cupcakeOrderInfo:CupcakeVO = new CupcakeVO();
+			
+			private var _priceCount:Number = 0;
+			private var _itemCount:Number = 0;
+			
+			protected function bordercontainer1_creationCompleteHandler(event:FlexEvent):void
+			{
+				_cupcakeService.addEventListener(OrderEvent.LOADED, onLoadedCupcakes);
+				_cupcakeService.readCupcakes();
+			}
+			protected function onLoadedCupcakes(event:OrderEvent):void
+			{
+				cupcakeList.dataProvider = new ArrayCollection(event.cupcakeArray);
+			}			
+			protected function cupcakeList_clickHandler(event:MouseEvent):void
+			{
+				detailView._cupcakeVO = cupcakeList.selectedItem as CupcakeVO;
+				detailView._image = "com/model/cupcakeLarge.png";
+				detailView.addButton.enabled = true;
+			}
+			protected function addedToCart(event:OrderEvent):void
+			{
+				cVO = new CupcakeVO();
+				cVO.cupCake = event.cupcakeOrderVO.cupCake;
+				cVO.type = event.cupcakeOrderVO.type;
+				cVO.description = event.cupcakeOrderVO.description;
+				cVO.quantity = event.cupcakeOrderVO.quantity;
+				cVO.price = event.cupcakeOrderVO.price;
+				_priceCount += (cVO.price*cVO.quantity);
+				_itemCount += cVO.quantity;
+				totalPrice.text = "Total Price: " + currency.format(_priceCount);
+				totalItems.text = "Total Items: " + _itemCount;
+				shoppingCart.shoppingCartData.addItem(cVO);
+				CheckoutCart.enabled = true;
+			}
+			protected function BTN_deleteItem(event:MouseEvent):void
+			{
+				_priceCount -= shoppingCart.selectedItem.price*shoppingCart.selectedItem.quantity;
+				_itemCount -= shoppingCart.selectedItem.quantity;
+				totalPrice.text = "Total Price: " + currency.format(_priceCount);
+				totalItems.text = "Total Items: " + _itemCount;
+				shoppingCart.shoppingCartData.removeItemAt(shoppingCart.selectedIndex);
+				if(shoppingCart.shoppingCartData.length == 0){
+					CheckoutCart.enabled = false;
+				}
+			}
+			protected function BTN_checkoutCart(event:MouseEvent):void
+			{
+				var orderEvent:OrderEvent = new OrderEvent("ordered");
+				orderEvent.orderList = shoppingCart.shoppingCartData;
+				dispatchEvent(orderEvent);
+			}
+			
+			protected function shoppingCart_changeHandler(event:IndexChangeEvent):void
+			{
+				deleteItem.enabled = true;
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<model:CupcakeVO id="cVO" />
+		<s:CurrencyFormatter id="currency" useCurrencySymbol="true"/>
+	</fx:Declarations>
+	
+	<s:layout>
+		<s:HorizontalLayout/>
+	</s:layout>
+	
+	<view:CupcakeList id="cupcakeList" height="600" borderVisible="false"
+					  click="cupcakeList_clickHandler(event)"
+					  contentBackgroundColor="#4d2f15" rollOverColor="#302414"
+					  selectionColor="#823545" buttonMode="true"/>
+	<view:DetailView id="detailView" addedtocart="addedToCart(event)"/>
+	
+	<s:BorderContainer backgroundColor="#4d2f15" borderVisible="false" height="600">
+		<s:VGroup contentBackgroundColor="#4d2f15">
+			<s:Label id="shoppingCartTitle" text="Shopping Cart" color="#dce4ef" paddingLeft="28"
+					 fontSize="18" fontWeight="bold" textAlign="center" textDecoration="underline"/>
+			<view:ShoppingCart id="shoppingCart" height="400" borderVisible="false"
+							   rollOverColor="#302414" selectionColor="#823545" buttonMode="true"
+							   change="shoppingCart_changeHandler(event)"/>
+			<s:Label id="totalItems" color="#DCE4EF" fontSize="18" paddingLeft="4"
+					 text="Total Items: 0"/>
+			<s:Label id="totalPrice" color="#DCE4EF" fontSize="18" paddingLeft="4"
+					 text="Total Price: $0.00"/>
+			<s:HGroup width="100%" paddingLeft="8">
+				<s:Button id="deleteItem" enabled="false" label="Remove Item" click="BTN_deleteItem(event)"/>
+			</s:HGroup>
+			<s:HGroup width="100%" paddingLeft="13" paddingTop="20">
+				<s:Button id="CheckoutCart" enabled="false" label="Checkout Cart" click="BTN_checkoutCart(event)"
+						  fontSize="20" buttonMode="true" skinClass="com.model.skins.Button_StartOrdering_skin"/>
+			</s:HGroup>
+		</s:VGroup>
+	</s:BorderContainer>
+	
+</s:BorderContainer>
