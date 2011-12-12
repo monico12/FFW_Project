@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:model="com.model.*">
+	<fx:Metadata>
+		[Event(name="back", type="com.controller.OrderEvent")]
+	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			import com.controller.OrderEvent;
+			import com.service.Service;
+			
+			import mx.controls.Alert;
+			
+			[Bindable]
+			private var _createOrderService:Service = new Service();
+			private var _formValid:Boolean = false;
+			protected function onEdit_clickHandler(event:MouseEvent):void
+			{
+				var backEvent:OrderEvent = new OrderEvent("back");
+				dispatchEvent(backEvent);
+			}
+			public function set userFields(userInfo:CupcakeVO):void
+			{
+				firstName.text = userInfo.firstName;
+				lastName.text = userInfo.lastName;
+				street.text = userInfo.address;
+				city.text = userInfo.city;
+				state.text = userInfo.state;
+				email.text = userInfo.emailAddress;
+				phone.text = userInfo.phoneNumber + "";
+			}
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				if(_formValid)
+				{
+					for each(var cVO:CupcakeVO in finalList)
+					{
+						var cupcakeVO:CupcakeVO = new CupcakeVO;
+						cupcakeVO.firstName = firstName.text;
+						cupcakeVO.lastName = lastName.text;
+						cupcakeVO.address = street.text;
+						cupcakeVO.city = city.text;
+						cupcakeVO.state = state.text;
+						cupcakeVO.creditCard = cardNumber.text as Number;
+						cupcakeVO.creditExpiration = expDate.text as Date;
+						cupcakeVO.emailAddress = email.text;
+						cupcakeVO.phoneNumber = phone.text as Number;
+						cupcakeVO.cupCake = cVO.cupCake;
+						cupcakeVO.type = cVO.type;
+						cupcakeVO.description = cVO.description;
+						cupcakeVO.quantity = cVO.quantity;
+						cupcakeVO.price = cVO.price;
+						_createOrderService.createOrder(cupcakeVO);
+					}
+					onOrderedCupcakes();	
+				}
+				
+			}			
+			public function arrayCollection(ac:ArrayCollection):void
+			{
+				finalList=ac;
+			}
+			
+			protected function onOrderedCupcakes():void
+			{
+				Alert.show("successful order!", "test");
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<s:ArrayCollection id="finalList" />
+		<model:CupcakeVO id="userCupcakeVO"/>
+		
+		<mx:StringValidator id="firstNameValidator" source="{firstName}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter First Name"
+							maxLength="100" tooLongError="First Name is too long"
+							minLength="2" tooShortError="First Name is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:StringValidator id="lastNameValidator" source="{lastName}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter Last Name"
+							maxLength="100" tooLongError="Last Name is too long"
+							minLength="2" tooShortError="Last Name is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:StringValidator id="addressValidator" source="{street}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter Address"
+							maxLength="100" tooLongError="Address is too long"
+							minLength="3" tooShortError="Address is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:StringValidator id="cityValidator" source="{city}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter City"
+							maxLength="100" tooLongError="City is too long"
+							minLength="3" tooShortError="City is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:StringValidator id="stateValidator" source="{state}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter State"
+							maxLength="100" tooLongError="State is too long"
+							minLength="2" tooShortError="State is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:EmailValidator id="emailValidator" source="{email}" property="text"
+						   trigger="{submit}" triggerEvent="click"
+						   required="true" requiredFieldError="Enter Email"
+						   invalidCharError="Enter Valid Email"
+						   invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:PhoneNumberValidator id="phoneNumberValidator" source="{phone}"
+								 trigger="{submit}" triggerEvent="click"
+								 required="true" requiredFieldError="Enter Phone Number"
+								 invalidCharError="Enter Valid Phone Number" property="text"
+								 invalid="_formValid = false" valid="_formValid = true"/>
+		
+		<mx:DateValidator id="dateValidator" source="{expDate}"
+						  trigger="{submit}" triggerEvent="click"
+						  invalid="_formValid = false" valid="_formValid = true"
+						  invalidCharError="Enter Valid Date"/>
+		<mx:CreditCardValidator id="creditCardValidator" source="{cardNumber}"
+								trigger="{submit}" triggerEvent="click"
+								invalid="_formValid = false" valid="_formValid = true"
+								invalidCharError="Enter Valid Credit Card"/>
+		
+		
+		
+		
+	</fx:Declarations>
+	<s:layout>
+		<s:HorizontalLayout/>
+	</s:layout>
+	<s:VGroup paddingBottom="10">
+		<s:List id="OrderList" itemRenderer="com.model.ShoppingCartRenderer"/>
+		<s:Button id="reviewButton" label="Edit Order" click="onEdit_clickHandler(event)"/>	
+	</s:VGroup>
+	
+	<s:Form>
+		<s:FormItem label="First Name">
+			<s:TextInput id="firstName" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="Last Name">
+			<s:TextInput id="lastName" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="Address">
+			<s:TextInput id="street" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="City">
+			<s:TextInput id="city" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="State">
+			<s:TextInput id="state" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="Credit Card Number">
+			<s:TextInput id="cardNumber" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="Expiration Date">
+			<mx:DateField id="expDate"/>
+		</s:FormItem>
+		<s:FormItem label="Email Address">
+			<s:TextInput id="email" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="Phone Number">
+			<s:TextInput id="phone" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem>
+			<s:Button id="submit" label="Submit Order" click="button1_clickHandler(event)"/>
+		</s:FormItem>
+	</s:Form>
+</s:BorderContainer>

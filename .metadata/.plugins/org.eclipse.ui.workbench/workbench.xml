@@ -26,7 +26,7 @@
 </coolbarLayout>
 <page aggregateWorkingSetId="Aggregate for window 1323394635404" focus="true" label="Workspace - Flash">
 <editors>
-<editorArea activeWorkbook="DefaultEditorWorkbook">
+<editorArea activeWorkbook="org.eclipse.ui.internal.EditorStack@ce9652">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -40,6 +40,18 @@
 <part id="7"/>
 <part id="8"/>
 <part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.internal.EditorStack@ce9652" ratio="0.49919224" ratioLeft="309" ratioRight="310" relationship="4" relative="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
@@ -47,7 +59,7 @@
 <editor id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="FFW_Project.mxml" partName="FFW_Project.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project/src/FFW_Project.mxml" title="FFW_Project.mxml" tooltip="FFW_Project/src/FFW_Project.mxml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FFW_Project/src/FFW_Project.mxml"/>
 </editor>
-<editor activePart="true" focus="true" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="context.mxml" partName="context.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project/src/com/context.mxml" title="context.mxml" tooltip="FFW_Project/src/com/context.mxml" workbook="DefaultEditorWorkbook">
+<editor id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="context.mxml" partName="context.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project/src/com/context.mxml" title="context.mxml" tooltip="FFW_Project/src/com/context.mxml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FFW_Project/src/com/context.mxml"/>
 </editor>
 <editor id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="OrderForm.mxml" partName="OrderForm.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project/src/com/view/OrderForm.mxml" title="OrderForm.mxml" tooltip="FFW_Project/src/com/view/OrderForm.mxml" workbook="DefaultEditorWorkbook">
@@ -77,6 +89,24 @@
 <editor id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="LoginForm.mxml" partName="LoginForm.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project/src/com/view/LoginForm.mxml" title="LoginForm.mxml" tooltip="FFW_Project/src/com/view/LoginForm.mxml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FFW_Project/src/com/view/LoginForm.mxml"/>
 </editor>
+<editor id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="FFW_Project.mxml" partName="FFW_Project.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project_7/src/FFW_Project.mxml" title="FFW_Project.mxml" tooltip="FFW_Project_7/src/FFW_Project.mxml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FFW_Project_7/src/FFW_Project.mxml"/>
+</editor>
+<editor id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="Menu.mxml" partName="Menu.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project_7/src/com/view/Menu.mxml" title="Menu.mxml" tooltip="FFW_Project_7/src/com/view/Menu.mxml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FFW_Project_7/src/com/view/Menu.mxml"/>
+</editor>
+<editor focus="true" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="OrderReview.mxml" partName="OrderReview.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project_7/src/com/view/OrderReview.mxml" title="OrderReview.mxml" tooltip="FFW_Project_7/src/com/view/OrderReview.mxml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FFW_Project_7/src/com/view/OrderReview.mxml"/>
+</editor>
+<editor id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="ShoppingCart.mxml" partName="ShoppingCart.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project_7/src/com/view/ShoppingCart.mxml" title="ShoppingCart.mxml" tooltip="FFW_Project_7/src/com/view/ShoppingCart.mxml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FFW_Project_7/src/com/view/ShoppingCart.mxml"/>
+</editor>
+<editor id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="DetailView.mxml" partName="DetailView.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project_7/src/com/view/DetailView.mxml" title="DetailView.mxml" tooltip="FFW_Project_7/src/com/view/DetailView.mxml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FFW_Project_7/src/com/view/DetailView.mxml"/>
+</editor>
+<editor activePart="true" focus="true" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="LoginView.mxml" partName="LoginView.mxml" path="/Users/versiontenpointo/Desktop/FFW_Project/FFW_Project_7/src/com/view/LoginView.mxml" title="LoginView.mxml" tooltip="FFW_Project_7/src/com/view/LoginView.mxml" workbook="org.eclipse.ui.internal.EditorStack@ce9652">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/FFW_Project_7/src/com/view/LoginView.mxml"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
@@ -91,6 +121,13 @@
 </view>
 <view id="com.adobe.flexbuilder.packageexplorer" partName="Package Explorer">
 <viewState LINK_NAVIGATOR_TO_EDITOR="0" fpeIsFlat="0" fpeSortBy="1" sorter="1">
+<fpeExpanded>
+<fpeElement fpePath="/FFW_Project_7"/>
+<fpeElement fpePath="/FFW_Project_7/src"/>
+<fpeElement fpePath="/FFW_Project_7/src/%typeDefaultPackage"/>
+<fpeElement fpePath="/FFW_Project_7/src/com"/>
+<fpeElement fpePath="/FFW_Project_7/src/com/controller"/>
+</fpeExpanded>
 <filters>
 <filter element="*.class" isEnabled="false"/>
 <filter element=".*" isEnabled="false"/>
@@ -111,6 +148,9 @@
 <filter element=".DS_Store" isEnabled="true"/>
 <filter element=".model" isEnabled="true"/>
 </filters>
+<expanded>
+<element path="/FFW_Project_7"/>
+</expanded>
 </viewState>
 </view>
 <view id="com.adobe.flexbuilder.monitors.network.view.NetworkMonitorView" partName="Network Monitor"/>
@@ -254,11 +294,6 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project/src/com/context.mxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project/src/com/view/OrderForm.mxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project/src/com/view/skinTest.mxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project/src/com/model/skins.mxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project/src/com/model/testButtonSkin.mxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/FFW_Project/src/com/service/Service.as"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/FFW_Project/src/com/controller/UserEvent.as"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/FFW_Project/src/com/controller/OrderEvent.as"/>
@@ -269,156 +304,166 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project/src/FFW_Project.mxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project/src/com/view/DetailView.mxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project/src/com/view/LoginForm.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project_7/src/FFW_Project.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project/src/com/view/LoginForm.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project_7/src/com/view/Menu.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project_7/src/com/view/OrderReview.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project_7/src/com/view/ShoppingCart.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project_7/src/com/view/DetailView.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project_7/src/com/view/LoginView.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project_7/src/com/view/ShoppingCart.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project_7/src/com/view/OrderReview.mxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" path="/FFW_Project_7/src/com/model/skins/Scroll_Bar_skin.mxml"/>
 </editors>
-<item historyLabel="context.mxml" index="0">
-<position info="not_deleted" x="308" y="0"/>
-</item>
-<item historyLabel="skinTest.mxml" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="context.mxml" index="0">
-<position info="not_deleted" x="338" y="0"/>
-</item>
-<item historyLabel="skinTest.mxml" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="skins.mxml" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="skinTest.mxml" index="2">
+<item historyLabel="Service.as" index="0">
 <position/>
 </item>
-<item historyLabel="skins.mxml" index="3">
-<position/>
-</item>
-<item historyLabel="OrderForm.mxml" index="1">
+<item historyLabel="context.mxml" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="skins.mxml" index="3">
-<position info="not_deleted" x="7059" y="0"/>
-</item>
-<item historyLabel="skinTest.mxml" index="2">
-<position info="not_deleted" x="353" y="0"/>
-</item>
-<item historyLabel="testButtonSkin.mxml" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Service.as" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="UserEvent.as" index="6">
-<position info="not_deleted" x="498" y="0"/>
-</item>
-<item historyLabel="OrderEvent.as" index="7">
-<position info="not_deleted" x="295" y="0"/>
-</item>
-<item historyLabel="CupcakeVO.as" index="8">
-<position info="not_deleted" x="69" y="0"/>
-</item>
-<item historyLabel="Service.as" index="5">
+<item historyLabel="Service.as" index="0">
 <position/>
 </item>
-<item historyLabel="OrderEvent.as" index="7">
-<position info="not_deleted" x="505" y="0"/>
-</item>
-<item historyLabel="Service.as" index="5">
-<position/>
-</item>
-<item historyLabel="OrderEvent.as" index="7">
-<position info="not_deleted" x="258" y="0"/>
-</item>
-<item historyLabel="Service.as" index="5">
-<position/>
-</item>
-<item historyLabel="context.mxml" index="9">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="Service.as" index="5">
-<position/>
-</item>
-<item historyLabel="context.mxml" index="9">
+<item historyLabel="context.mxml" index="4">
 <position info="not_deleted" x="661" y="0"/>
 </item>
-<item historyLabel="Service.as" index="5">
+<item historyLabel="Service.as" index="0">
 <position info="not_deleted" x="1317" y="0"/>
 </item>
-<item historyLabel="CupcakeList.mxml" index="10">
+<item historyLabel="CupcakeList.mxml" index="5">
 <position info="not_deleted" x="293" y="0"/>
 </item>
-<item historyLabel="CupcakeRenderer.mxml" index="11">
+<item historyLabel="CupcakeRenderer.mxml" index="6">
 <position info="not_deleted" x="323" y="0"/>
 </item>
-<item historyLabel="context.mxml" index="9">
+<item historyLabel="context.mxml" index="4">
 <position info="not_deleted" x="777" y="0"/>
 </item>
-<item historyLabel="CupcakeList.mxml" index="10">
+<item historyLabel="CupcakeList.mxml" index="5">
 <position info="not_deleted" x="179" y="0"/>
 </item>
-<item historyLabel="context.mxml" index="9">
+<item historyLabel="context.mxml" index="4">
 <position info="not_deleted" x="884" y="0"/>
 </item>
-<item historyLabel="Service.as" index="5">
+<item historyLabel="Service.as" index="0">
 <position info="not_deleted" x="1317" y="0"/>
 </item>
-<item historyLabel="OrderEvent.as" index="7">
+<item historyLabel="OrderEvent.as" index="2">
 <position info="not_deleted" x="258" y="0"/>
 </item>
-<item historyLabel="context.mxml" index="9">
+<item historyLabel="context.mxml" index="4">
 <position info="not_deleted" x="884" y="0"/>
 </item>
-<item historyLabel="CupcakeVO.as" index="8">
+<item historyLabel="CupcakeVO.as" index="3">
 <position info="not_deleted" x="122" y="0"/>
 </item>
-<item historyLabel="OrderEvent.as" index="7">
+<item historyLabel="OrderEvent.as" index="2">
 <position info="not_deleted" x="228" y="0"/>
 </item>
-<item historyLabel="UserEvent.as" index="6">
+<item historyLabel="UserEvent.as" index="1">
 <position info="not_deleted" x="498" y="0"/>
 </item>
-<item historyLabel="OrderEvent.as" index="7">
+<item historyLabel="OrderEvent.as" index="2">
 <position info="not_deleted" x="228" y="0"/>
 </item>
-<item historyLabel="CupcakeList.mxml" index="10">
+<item historyLabel="CupcakeList.mxml" index="5">
 <position info="not_deleted" x="179" y="0"/>
 </item>
-<item historyLabel="CupcakeRenderer.mxml" index="11">
+<item historyLabel="CupcakeRenderer.mxml" index="6">
 <position info="not_deleted" x="323" y="0"/>
 </item>
-<item historyLabel="FFW_Project.mxml" index="12">
+<item historyLabel="FFW_Project.mxml" index="7">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="context.mxml" index="9">
+<item historyLabel="context.mxml" index="4">
 <position info="not_deleted" x="506" y="0"/>
 </item>
-<item historyLabel="DetailView.mxml" index="13">
+<item historyLabel="DetailView.mxml" index="8">
 <position info="not_deleted" x="691" y="0"/>
 </item>
-<item historyLabel="LoginForm.mxml" index="14">
+<item historyLabel="LoginForm.mxml" index="9">
 <position info="not_deleted" x="975" y="0"/>
 </item>
-<item historyLabel="DetailView.mxml" index="13">
+<item historyLabel="DetailView.mxml" index="8">
 <position info="not_deleted" x="691" y="0"/>
 </item>
-<item historyLabel="LoginForm.mxml" index="14">
+<item historyLabel="LoginForm.mxml" index="9">
 <position info="not_deleted" x="323" y="0"/>
 </item>
-<item historyLabel="context.mxml" index="9">
+<item historyLabel="context.mxml" index="4">
 <position info="not_deleted" x="1130" y="0"/>
 </item>
-<item historyLabel="LoginForm.mxml" index="14">
+<item historyLabel="LoginForm.mxml" index="9">
 <position info="not_deleted" x="200" y="0"/>
 </item>
-<item historyLabel="context.mxml" index="9">
+<item historyLabel="context.mxml" index="4">
 <position info="not_deleted" x="1130" y="0"/>
 </item>
-<item historyLabel="DetailView.mxml" index="13">
+<item historyLabel="DetailView.mxml" index="8">
 <position info="not_deleted" x="691" y="0"/>
 </item>
-<item historyLabel="FFW_Project.mxml" index="12">
+<item historyLabel="FFW_Project.mxml" index="7">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="context.mxml" index="9">
+<item historyLabel="context.mxml" index="4">
 <position info="not_deleted" x="1137" y="0"/>
+</item>
+<item historyLabel="FFW_Project.mxml" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LoginForm.mxml" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="FFW_Project.mxml" index="10">
+<position/>
+</item>
+<item historyLabel="Menu.mxml" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="OrderReview.mxml" index="13">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ShoppingCart.mxml" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="DetailView.mxml" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LoginView.mxml" index="16">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ShoppingCart.mxml" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="OrderReview.mxml" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LoginView.mxml" index="16">
+<position info="not_deleted" x="1285" y="2424"/>
+</item>
+<item historyLabel="OrderReview.mxml" index="18">
+<position info="not_deleted" x="5191" y="0"/>
+</item>
+<item historyLabel="LoginView.mxml" index="16">
+<position info="not_deleted" x="3877" y="70"/>
+</item>
+<item historyLabel="OrderReview.mxml" index="18">
+<position info="not_deleted" x="5341" y="0"/>
+</item>
+<item historyLabel="LoginView.mxml" index="16">
+<position info="not_deleted" x="2997" y="0"/>
+</item>
+<item historyLabel="OrderReview.mxml" index="18">
+<position info="not_deleted" x="4072" y="0"/>
+</item>
+<item historyLabel="LoginView.mxml" index="16">
+<position info="not_deleted" x="2957" y="0"/>
+</item>
+<item historyLabel="Scroll_Bar_skin.mxml" index="19">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="LoginView.mxml" index="16">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -437,6 +482,27 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="Scroll_Bar_skin.mxml" tooltip="FFW_Project_7/src/com/model/skins/Scroll_Bar_skin.mxml">
+<persistable path="/FFW_Project_7/src/com/model/skins/Scroll_Bar_skin.mxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="LoginView.mxml" tooltip="FFW_Project_7/src/com/view/LoginView.mxml">
+<persistable path="/FFW_Project_7/src/com/view/LoginView.mxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="DetailView.mxml" tooltip="FFW_Project_7/src/com/view/DetailView.mxml">
+<persistable path="/FFW_Project_7/src/com/view/DetailView.mxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="ShoppingCart.mxml" tooltip="FFW_Project_7/src/com/view/ShoppingCart.mxml">
+<persistable path="/FFW_Project_7/src/com/view/ShoppingCart.mxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="OrderReview.mxml" tooltip="FFW_Project_7/src/com/view/OrderReview.mxml">
+<persistable path="/FFW_Project_7/src/com/view/OrderReview.mxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="Menu.mxml" tooltip="FFW_Project_7/src/com/view/Menu.mxml">
+<persistable path="/FFW_Project_7/src/com/view/Menu.mxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="FFW_Project.mxml" tooltip="FFW_Project_7/src/FFW_Project.mxml">
+<persistable path="/FFW_Project_7/src/FFW_Project.mxml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="LoginForm.mxml" tooltip="FFW_Project/src/com/view/LoginForm.mxml">
 <persistable path="/FFW_Project/src/com/view/LoginForm.mxml"/>
 </file>
@@ -460,27 +526,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="UserEvent.as" tooltip="FFW_Project/src/com/controller/UserEvent.as">
 <persistable path="/FFW_Project/src/com/controller/UserEvent.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="NationalForestEvent.as" tooltip="nationalForest_salvadorMonico/src/com/controller/NationalForestEvent.as">
-<persistable path="/nationalForest_salvadorMonico/src/com/controller/NationalForestEvent.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="NationalForest.as" tooltip="nationalForest_salvadorMonico/src/com/model/NationalForest.as">
-<persistable path="/nationalForest_salvadorMonico/src/com/model/NationalForest.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="git" tooltip="FFW_Project/libs/git">
-<persistable path="/FFW_Project/libs/git"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="OrderEvent.as" tooltip="FFW_Project/src/com/controller/OrderEvent.as">
-<persistable path="/FFW_Project/src/com/controller/OrderEvent.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="CupcakeVO.as" tooltip="FFW_Project/src/com/model/CupcakeVO.as">
-<persistable path="/FFW_Project/src/com/model/CupcakeVO.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="Service.as" tooltip="FFW_Project/src/com/service/Service.as">
-<persistable path="/FFW_Project/src/com/service/Service.as"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.mxml.MXMLEditor" name="OrderForm.mxml" tooltip="FFW_Project/src/com/view/OrderForm.mxml">
-<persistable path="/FFW_Project/src/com/view/OrderForm.mxml"/>
 </file>
 </mruList>
 </workbench>
