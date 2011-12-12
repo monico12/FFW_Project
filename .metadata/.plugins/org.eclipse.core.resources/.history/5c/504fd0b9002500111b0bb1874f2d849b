@@ -17,25 +17,35 @@
 			
 			import mx.events.ValidationResultEvent;
 			
-			private var _formValid:Boolean;
+			private var _formValid:Boolean = false;
 			protected function button1_clickHandler(event:MouseEvent):void
 			{
 				if(_formValid)
 				{
-					var loginEvent:UserEvent = new UserEvent("login");
-					loginEvent.cupcakeVO = new CupcakeVO();
-					loginEvent.cupcakeVO.firstName = firstName.text;
-					loginEvent.cupcakeVO.lastName = lastName.text;
-					loginEvent.cupcakeVO.address = street.text;
-					loginEvent.cupcakeVO.state = state.text;
-					loginEvent.cupcakeVO.city = city.text;
-					loginEvent.cupcakeVO.emailAddress = email.text;
-					loginEvent.cupcakeVO.phoneNumber = Number(phone.text);
 					
-					dispatchEvent(loginEvent);
 				}
 			}
 			
+			protected function firstNameValidator_validHandler(event:ValidationResultEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
+			private function validForm():void
+			{
+				var loginEvent:UserEvent = new UserEvent("login");
+				loginEvent.cupcakeVO = new CupcakeVO();
+				loginEvent.cupcakeVO.firstName = firstName.text;
+				loginEvent.cupcakeVO.lastName = lastName.text;
+				loginEvent.cupcakeVO.address = street.text;
+				loginEvent.cupcakeVO.state = state.text;
+				loginEvent.cupcakeVO.city = city.text;
+				loginEvent.cupcakeVO.emailAddress = email.text;
+				loginEvent.cupcakeVO.phoneNumber = Number(phone.text);
+				
+				dispatchEvent(loginEvent);
+			}
 			
 		]]>
 	</fx:Script>
@@ -47,7 +57,7 @@
 							required="true" requiredFieldError="Enter First Name"
 							maxLength="100" tooLongError="First Name is too long"
 							minLength="2" tooShortError="First Name is too short"
-							invalid="_formValid = false" valid="_formValid = true"/>
+							valid="firstNameValidator_validHandler(event)"/>
 		<mx:StringValidator id="lastNameValidator" source="{lastName}" property="text"
 							trigger="{submit}" triggerEvent="click"
 							required="true" requiredFieldError="Enter Last Name"

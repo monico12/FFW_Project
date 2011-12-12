@@ -17,7 +17,7 @@
 			
 			import mx.events.ValidationResultEvent;
 			
-			private var _formValid:Boolean;
+			private var _formValid:Boolean = false;
 			protected function button1_clickHandler(event:MouseEvent):void
 			{
 				if(_formValid)

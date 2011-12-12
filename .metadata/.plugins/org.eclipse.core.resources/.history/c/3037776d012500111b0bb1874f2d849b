@@ -17,7 +17,7 @@
 			
 			import mx.events.ValidationResultEvent;
 			
-			private var _formValid:Boolean;
+			private var _formValid:Boolean = false;
 			protected function button1_clickHandler(event:MouseEvent):void
 			{
 				if(_formValid)
@@ -47,7 +47,7 @@
 							required="true" requiredFieldError="Enter First Name"
 							maxLength="100" tooLongError="First Name is too long"
 							minLength="2" tooShortError="First Name is too short"
-							invalid="_formValid = false" valid="_formValid = true"/>
+							valid="firstNameValidator_validHandler(event)"/>
 		<mx:StringValidator id="lastNameValidator" source="{lastName}" property="text"
 							trigger="{submit}" triggerEvent="click"
 							required="true" requiredFieldError="Enter Last Name"
