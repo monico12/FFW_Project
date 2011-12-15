@@ -1,0 +1,19 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+s|Label{
+	fontFamily: Helvetica;
+}
+
+s|BorderContainer{
+	backgroundColor:"#DCE4EF";
+	borderColor:"#4d2f15";
+	borderWeight:"5";
+	cornerRadius:"8";
+	dropShadowVisible:"false";
+}
+global
+{
+	color: #4d2f15;
+}

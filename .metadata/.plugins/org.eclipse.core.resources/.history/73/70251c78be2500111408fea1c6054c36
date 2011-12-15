@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:view="com.view.*">
+	<fx:Style source="com/model/Styles.css"/>
+	<fx:Script>
+		<![CDATA[
+			import com.controller.OrderEvent;
+			import com.controller.UserEvent;
+			import com.model.CupcakeVO;
+			import com.view.Menu;
+			
+			private var _userVO:CupcakeVO;
+			[Bindable]
+			private var _menu:Menu = new Menu;
+			
+			protected function menu1_orderedHandler(event:OrderEvent):void
+			{
+				currentState="orderView";
+				orderReview.userFields = _userVO;
+				orderReview.OrderList.dataProvider = event.orderList;
+				orderReview.finalList = event.orderList;
+			}
+			protected function orderReview_backHandler(event:OrderEvent):void
+			{
+				currentState="detailView";
+			}
+			protected function loginview1_loginHandler(event:UserEvent):void
+			{
+				_userVO = event.cupcakeVO;
+				currentState = "detailView";
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:states>
+		<s:State name="loginView"/>
+		<s:State name="detailView"/>
+		<s:State name="orderView"/>
+		
+	</s:states>
+	
+	<view:LoginView includeIn="loginView" login="loginview1_loginHandler(event)" id="login"/>
+	<view:Menu includeIn="detailView" id="menu" ordered="menu1_orderedHandler(event)"/>
+	<view:OrderReview id="orderReview" includeIn="orderView" back="orderReview_backHandler(event)"  id="order"/>
+	
+</s:Group>

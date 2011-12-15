@@ -1,0 +1,10 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+#login, #orderReview, #menu{
+	borderColor:#4d2f15;
+	backgroundColor:#dce4ef;
+	borderWeight:5;
+	cornerRadius:8;
+}

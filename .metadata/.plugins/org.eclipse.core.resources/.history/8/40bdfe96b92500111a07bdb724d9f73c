@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+				   xmlns:s="library://ns.adobe.com/flex/spark"
+				   xmlns:mx="library://ns.adobe.com/flex/mx"
+				   backgroundColor="#DCE4EF" borderColor="#4d2f15"
+				   borderWeight="5" cornerRadius="8"
+				   dropShadowVisible="false">
+	
+	<fx:Metadata>
+		[Event(name="login", type="com.controller.UserEvent")]
+	</fx:Metadata>
+	<fx:Style source="com/model/Styles.css"/>
+	<fx:Script>
+		<![CDATA[
+			import com.controller.UserEvent;
+			import com.model.CupcakeVO;
+			
+			import mx.events.ValidationResultEvent;
+			
+			private var _formValid:Boolean;
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				if(_formValid)
+				{
+					var loginEvent:UserEvent = new UserEvent("login");
+					loginEvent.cupcakeVO = new CupcakeVO();
+					loginEvent.cupcakeVO.firstName = firstName.text;
+					loginEvent.cupcakeVO.lastName = lastName.text;
+					loginEvent.cupcakeVO.address = street.text;
+					loginEvent.cupcakeVO.state = state.text;
+					loginEvent.cupcakeVO.city = city.text;
+					loginEvent.cupcakeVO.emailAddress = email.text;
+					loginEvent.cupcakeVO.phoneNumber = Number(phone.text);
+					
+					dispatchEvent(loginEvent);
+				}
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<mx:StringValidator id="firstNameValidator" source="{firstName}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter First Name"
+							maxLength="100" tooLongError="First Name is too long"
+							minLength="2" tooShortError="First Name is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:StringValidator id="lastNameValidator" source="{lastName}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter Last Name"
+							maxLength="100" tooLongError="Last Name is too long"
+							minLength="2" tooShortError="Last Name is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:StringValidator id="addressValidator" source="{street}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter Address"
+							maxLength="100" tooLongError="Address is too long"
+							minLength="3" tooShortError="Address is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:StringValidator id="cityValidator" source="{city}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter City"
+							maxLength="100" tooLongError="City is too long"
+							minLength="3" tooShortError="City is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:StringValidator id="stateValidator" source="{state}" property="text"
+							trigger="{submit}" triggerEvent="click"
+							required="true" requiredFieldError="Enter State"
+							maxLength="100" tooLongError="State is too long"
+							minLength="2" tooShortError="State is too short"
+							invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:EmailValidator id="emailValidator" source="{email}" property="text"
+						   trigger="{submit}" triggerEvent="click"
+						   required="true" requiredFieldError="Enter Email"
+						   invalidCharError="Enter Valid Email"
+						   invalid="_formValid = false" valid="_formValid = true"/>
+		<mx:PhoneNumberValidator id="phoneNumberValidator" source="{phone}"
+								 trigger="{submit}" triggerEvent="click"
+								 required="true" requiredFieldError="Enter Phone Number"
+								 invalidCharError="Enter Valid Phone Number" property="text"
+								 invalid="_formValid = false" valid="_formValid = true"/>
+	</fx:Declarations>
+	<s:Form color="#4d2f15">
+		<s:layout>
+			<s:FormLayout gap="-10"/>
+		</s:layout>
+		<s:FormItem label="First Name">
+			<s:TextInput id="firstName" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="Last Name">
+			<s:TextInput id="lastName" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="Address">
+			<s:TextInput id="street" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="City">
+			<s:TextInput id="city" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="State">
+			<s:TextInput id="state" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="Email Address">
+			<s:TextInput id="email" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:FormItem label="Phone Number">
+			<s:TextInput id="phone" skinClass="com.model.skins.TextInput_skin"
+						 focusColor="#d8769e"/>
+		</s:FormItem>
+		<s:Spacer height="30"/>
+		<s:FormItem>
+			<s:Button id="submit" label="Start Ordering!" fontSize="20" buttonMode="true"
+					  skinClass="com.model.skins.Button_StartOrdering_skin"
+					  click="button1_clickHandler(event)"/>
+		</s:FormItem>
+	</s:Form>
+</s:BorderContainer>

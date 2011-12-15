@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				xmlns:s="library://ns.adobe.com/flex/spark" 
+				xmlns:mx="library://ns.adobe.com/flex/mx" 
+				autoDrawBackground="true">
+	
+	<fx:Declarations>
+		<s:CurrencyFormatter id="currency" useCurrencySymbol="true"/>
+	</fx:Declarations>
+	
+	<s:layout>
+		<s:HorizontalLayout paddingBottom="5" paddingLeft="6" paddingTop="6"/>
+	</s:layout>
+	
+	<s:Label text="({data.quantity})" fontWeight="bold" width="35"
+			 textAlign="left" color="#dce4ef"/>
+	<s:VGroup>
+		<s:Label text="{data.cupCake}" color="#dce4ef"/>
+		<s:Label text="{currency.format(data.price)} each" color="#dce4ef"/>
+	</s:VGroup>
+	
+</s:ItemRenderer>
